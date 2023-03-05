@@ -24,16 +24,18 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <span>👋</span>
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Hello, I am</p>
-              <h1 className="head-text">Fadi</h1>
+              <p className="p-text">Greetings!, I am</p>
+              <h1 className="sub-head-text">Fadi</h1>
             </div>
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">Web Developer</p>
-            <p className="p-text">Student</p>
+            <p className="cv-box p-text">
+              <a href="https://docdro.id/rLxbomX" download>
+                View CV
+              </a>
+            </p>
           </div>
         </div>
       </motion.div>
@@ -44,12 +46,14 @@ const Header = () => {
         className="app__header-img"
       >
         <img src={images.fadi} alt="profile_pic" />
+
         <motion.img
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: "easeInOut" }}
           className="overlay_circle"
           src={images.circle}
           alt="profile_pic_circle"
+          style={{ filter: "hue-rotate(-300deg)" }}
         ></motion.img>
       </motion.div>
 
@@ -58,11 +62,26 @@ const Header = () => {
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[images.flutter, images.redux, images.sass].map((circle, index) => (
-          <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <img src={circle} alt="circle" />
-          </div>
-        ))}
+        {[images.java, images.python, images.javascript, images.html].map(
+          (circle, index) => (
+            <motion.div
+              key={`circle-${index}`}
+              className="circle-cmp app__flex"
+              animate={{
+                y: [0, -10 + index * 5, 0, 10 - index * 5, 0],
+                rotate: [0, 5 + index * 5, 0, -5 - index * 5, 0],
+              }}
+              transition={{
+                duration: 5 + index,
+                ease: "easeInOut",
+                times: [0, 0.25, 0.5, 0.75, 1],
+                repeat: Infinity,
+              }}
+            >
+              <img src={circle} alt="circle" />
+            </motion.div>
+          )
+        )}
       </motion.div>
     </div>
   );
