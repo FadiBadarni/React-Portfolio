@@ -27,7 +27,7 @@
         padding: 1rem;
         border-radius: 10px;
         cursor: pointer;
-        background-color: #fef4f5;
+        background-color: #eacbf8;
 
         transition: all 0.3s ease-in-out;
 
@@ -47,7 +47,7 @@
         }
 
         &:hover {
-            box-shadow: 0 0 25px #fef4f5;
+            box-shadow: 0 0 20px #907ca0;
         }
 
         @media screen and (max-width: 450px) {
@@ -60,13 +60,7 @@
     }
 }
 
-.app__footer-cards .app__footer-card:last-child {
-    background-color: #f2f7fb;
-}
 
-.app__footer-cards .app__footer-card:last-child:hover {
-    box-shadow: 0 0 25px #f2f7fb;
-}
 
 .app__footer-form {
     width: 60%;
@@ -89,12 +83,20 @@
             padding: 0.95rem;
             border: none;
             border-radius: 7px;
-            background-color: var(--primary-color);
-
+            background-color: #c5bece;
+            resize: vertical;
             font-family: var(--font-base);
             color: var(--secondary-color);
             outline: none;
+
+            input:-webkit-autofill,
+            textarea:-webkit-autofill {
+                background-color: #c5bece !important;
+                color: var(--secondary-color) !important;
+            }
         }
+
+
 
         textarea {
             height: 170px;
@@ -109,7 +111,7 @@
         padding: 1rem 2rem;
         border-radius: 10px;
         border: none;
-        background-color: var(--secondary-color);
+        background-color: #8e75a3;
 
         font-weight: 500;
         color: var(--white-color);
@@ -121,7 +123,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: #2430af;
+            background-color: #9c7cb9;
         }
     }
 

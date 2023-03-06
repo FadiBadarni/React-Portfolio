@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { images } from "../../constants";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const panelClass = toggle ? "app__navbar-panel--open" : "";
 
   return (
     <nav className="app__navbar">

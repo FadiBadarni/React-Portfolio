@@ -25,14 +25,39 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <div style={{ marginLeft: 20 }}>
+            <div>
               <p className="p-text">Hey!, I'm</p>
-              <h1 className="sub-head-text">Fadi</h1>
+              <h1>Fadi</h1>
             </div>
           </div>
-
-          <div className="tag-cmp app__flex">
-            <p className="cv-box p-text">
+          <motion.div
+            variants={scaleVariants}
+            whileInView={scaleVariants.whileInView}
+            className="app__header-circles2"
+          >
+            {[images.java, images.python, images.javascript, images.html].map(
+              (circle, index) => (
+                <motion.div
+                  key={`circle-${index}`}
+                  className="circle-cmp app__flex"
+                  animate={{
+                    y: [0, -10 + index * 5, 0, 10 - index * 5, 0],
+                    rotate: [0, 5 + index * 5, 0, -5 - index * 5, 0],
+                  }}
+                  transition={{
+                    duration: 5 + index,
+                    ease: "easeInOut",
+                    times: [0, 0.25, 0.5, 0.75, 1],
+                    repeat: Infinity,
+                  }}
+                >
+                  <img src={circle} alt="circle" />
+                </motion.div>
+              )
+            )}
+          </motion.div>
+          <div className="tag-cmp button-54 app__flex">
+            <p className="cv-box  p-text">
               <a href="https://docdro.id/rLxbomX" download>
                 View CV
               </a>
