@@ -36,7 +36,7 @@ const projects = [
     description:
       "Password protection, database management, and encryption for sensitive data. It requires user registration, generates secure passwords, and encrypts passwords using SHA-512 before saving data in a database.",
     imgUrl: images.password,
-    repository: "https://github.com/FadiBadarni/PortFolio-2",
+    repository: "https://github.com/FadiBadarni/Password-Manager",
     tags: ["MySQL", "FXML"],
   },
   {
