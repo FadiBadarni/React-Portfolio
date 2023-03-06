@@ -3,7 +3,6 @@ import "./Header.scss";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import { AppWrap } from "../../wrapper";
-import { ReactComponent as MySvg } from "../../assets/polygon.svg";
 
 const scaleVariants = {
   whileInView: {

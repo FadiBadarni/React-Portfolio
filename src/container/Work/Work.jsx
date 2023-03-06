@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { useState } from "react";
+import { AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
@@ -56,8 +56,7 @@ const projects = [
 ];
 
 const Work = () => {
-  const [activeFilter, setactiveFilter] = useState("All");
-  const [animateCard, setanimateCard] = useState({ y: 0, opacity: 1 });
+  const [animateCard] = useState({ y: 0, opacity: 1 });
 
   return (
     <>

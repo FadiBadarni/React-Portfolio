@@ -2,12 +2,11 @@ import React from "react";
 import "./Navbar.scss";
 import { useState } from "react";
 
-import { HiMenu, HiMenuAlt4, HiX } from "react-icons/hi";
+import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const panelClass = toggle ? "app__navbar-panel--open" : "";
 
   return (
     <nav className="app__navbar">

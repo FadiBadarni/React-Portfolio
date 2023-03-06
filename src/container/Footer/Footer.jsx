@@ -1,10 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Footer.scss";
 
 const Footer = () => {

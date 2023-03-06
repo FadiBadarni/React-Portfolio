@@ -1,9 +1,8 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
-import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import "./Skills.scss";
 const skills = [
