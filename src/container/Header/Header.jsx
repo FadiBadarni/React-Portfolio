@@ -3,6 +3,7 @@ import "./Header.scss";
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import { AppWrap } from "../../wrapper";
+import { ReactComponent as MySvg } from "../../assets/polygon.svg";
 
 const scaleVariants = {
   whileInView: {
@@ -25,7 +26,7 @@ const Header = () => {
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">Greetings!, I am</p>
+              <p className="p-text">Hey!, I'm</p>
               <h1 className="sub-head-text">Fadi</h1>
             </div>
           </div>
@@ -53,7 +54,6 @@ const Header = () => {
           className="overlay_circle"
           src={images.circle}
           alt="profile_pic_circle"
-          style={{ filter: "hue-rotate(-300deg)" }}
         ></motion.img>
       </motion.div>
 

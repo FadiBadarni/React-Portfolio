@@ -8,6 +8,10 @@ import { useState, useEffect } from "react";
 import "./Footer.scss";
 
 const Footer = () => {
+  const serviceKey = process.env.REACT_APP_SERVICE_KEY;
+  const templateKey = process.env.REACT_APP_TEMPLATE_KEY;
+  const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+  console.log(serviceKey);
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
@@ -27,29 +31,22 @@ const Footer = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs
-      .sendForm(
-        "service_ehigxha",
-        "template_d9gkn0i",
-        form.current,
-        "4R79qYwBuxjEsGnU0"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setLoading(false);
-          setIsFormSubmitted(true);
-        },
-        (error) => {
-          console.log(error.text);
-          setLoading(false);
-        }
-      );
+    emailjs.sendForm(serviceKey, templateKey, form.current, publicKey).then(
+      (result) => {
+        console.log(result.text);
+        setLoading(false);
+        setIsFormSubmitted(true);
+      },
+      (error) => {
+        console.log(error.text);
+        setLoading(false);
+      }
+    );
   };
 
   return (
     <>
-      <h2 className="head-text">Take a coffee and chat with me</h2>
+      <h2 className="head-text">Let's Get in Touch!</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card">
@@ -113,5 +110,5 @@ const Footer = () => {
 export default AppWrap(
   MotionWrap(Footer, "app__footer"),
   "contact",
-  "app__whitebg"
+  "app__primary"
 );

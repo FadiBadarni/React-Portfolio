@@ -66,12 +66,32 @@
 }
 @media screen and (max-width: 450px) {
   .head-text {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
+.sub-head-text {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  color: var(--black-color);
+  text-transform: capitalize;
+}
+.sub-head-text span {
+  color: var(--secondary-color);
+}
+@media screen and (min-width: 2000px) {
+  .sub-head-text {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sub-head-text {
+    font-size: 1.5rem;
+  }
+}
 .p-text {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: left;
   color: var(--gray-color);
   line-height: 1.5;
@@ -104,7 +124,7 @@
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 .app__social div {
   width: 40px;
@@ -113,6 +133,7 @@
   background-color: var(--white-color);
   margin: 0.25rem 0;
   border: 1px solid var(--lightGray-color);
+  background-color: rgb(202, 198, 204);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -8,32 +8,50 @@ import "./Work.scss";
 
 const projects = [
   {
-    title: "Backend Development",
-    description: "im a great web dev.",
-    imgUrl: images.about01,
-    repository: "link to github",
-    tags: ["java", "python"],
+    title: "Keylogger Application",
+    description:
+      "Python app built for Introduction to Cyber Security course to understand keyloggers and spying malware.",
+    imgUrl: images.keylogger,
+    repository: "https://github.com/FadiBadarni/KeyLogger",
+    tags: ["Python"],
   },
   {
-    title: "Web Design",
-    description: "im a great web dev.",
-    imgUrl: images.about02,
-    repository: "link to github",
-    tags: ["java", "python"],
+    title: "Flight Booking System",
+    description:
+      "Flight booking system utilizing the latest technologies such as ASP.NET, C# and Firebase to provide an intuitive user experience.",
+    imgUrl: images.flight,
+    repository: "https://github.com/FadiBadarni/FlyWithMe",
+    tags: ["C#", "NoSQL"],
   },
   {
-    title: "Web Animation",
-    description: "im a great web dev.",
-    imgUrl: images.about03,
-    repository: "link to github",
-    tags: ["java", "python"],
+    title: "Medical Diagnosis",
+    description:
+      "A medical diagnosis program built with Java to take blood test results and give diagnoses, for educational purposes only.",
+    imgUrl: images.medical,
+    repository: "https://github.com/FadiBadarni/Medical-Diagnosis",
+    tags: ["FXML", "JavaFX"],
   },
   {
-    title: "Frontend Development",
-    description: "im a great web dev.",
-    imgUrl: images.about04,
-    repository: "link to github",
-    tags: ["java", "python"],
+    title: "Password Manager",
+    description:
+      "Password protection, database management, and encryption for sensitive data. It requires user registration, generates secure passwords, and encrypts passwords using SHA-512 before saving data in a database.",
+    imgUrl: images.password,
+    repository: "https://github.com/FadiBadarni/PortFolio-2",
+    tags: ["MySQL", "FXML"],
+  },
+  {
+    title: "React Portfolio Website",
+    description: "Personal portfolio website using React.",
+    imgUrl: images.portfolio2,
+    repository: "https://github.com/FadiBadarni/React-Portfolio",
+    tags: ["React", "JSX", "SCSS"],
+  },
+  {
+    title: "Portfolio Website",
+    description: "Portfolio Website.",
+    imgUrl: images.portfolio,
+    repository: "https://github.com/FadiBadarni/PortFolio-2",
+    tags: ["HTML", "JS", "CSS"],
   },
 ];
 
@@ -44,7 +62,7 @@ const Work = () => {
   return (
     <>
       <h2 className="head-text">
-        My <span> Projects Corner</span>
+        My <span> Projects </span>Corner
         <br />
       </h2>
 
@@ -67,17 +85,7 @@ const Work = () => {
                 }}
                 className="app__work-hover app__flex"
               >
-                <a href={project.description} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.9] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillEye />
-                  </motion.div>
-                </a>
-                <a href={project.description} target="_blank" rel="noreferrer">
+                <a href={project.repository} target="_blank" rel="noreferrer">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -96,7 +104,15 @@ const Work = () => {
                 {project.description}
               </p>
               <div className="app__work-tag app__flex">
-                <p className="p-text">{project.tags[0]}</p>
+                {project.tags.map((tag, index) => (
+                  <p
+                    key={`tag-${index}`}
+                    className="p-text app__work-tag-box"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    {tag}
+                  </p>
+                ))}
               </div>
             </div>
           </div>

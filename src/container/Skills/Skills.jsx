@@ -8,29 +8,55 @@ import { Tooltip as ReactTooltip } from "react-tooltip";
 import "./Skills.scss";
 const skills = [
   {
-    name: "C++",
+    name: "Advanced",
     bgColor: "",
-    icon: images.cpp,
+    icon: images.java,
   },
   {
-    name: "React",
+    name: "Advanced",
     bgColor: "",
-    icon: images.react,
+    icon: images.python,
   },
   {
-    name: "Flutter",
+    name: "Advanced",
     bgColor: "",
-    icon: images.flutter,
+    icon: images.html,
   },
   {
-    name: "CSS",
+    name: "Advanced",
     bgColor: "",
     icon: images.css,
   },
   {
-    name: "Javascript",
+    name: "Intermediate",
     bgColor: "",
     icon: images.javascript,
+  },
+  {
+    name: "Intermediate",
+    bgColor: "",
+    icon: images.cpp,
+  },
+  {
+    name: "Intermediate",
+    bgColor: "",
+    icon: images.cLanguage,
+  },
+
+  {
+    name: "Beginner",
+    bgColor: "",
+    icon: images.react,
+  },
+  {
+    name: "Beginner",
+    bgColor: "",
+    icon: images.node,
+  },
+  {
+    name: "Beginner",
+    bgColor: "",
+    icon: images.spring,
   },
 ];
 const experiences = [
@@ -38,26 +64,70 @@ const experiences = [
     year: 2020 + "-Current",
     works: [
       {
-        name: "Software Engineering Student",
+        name: "BSc in Software Engineering",
         company: "SCE College Of Engineering",
-      },
-    ],
-  },
-  {
-    year: 2020,
-    works: [
-      {
-        name: "frontend",
-        company: "BsFacebook",
-        desc: "test",
       },
     ],
   },
 ];
 const Skills = () => {
+  const [hoveredLetter, setHoveredLetter] = useState(null);
+
+  const handleHover = (letter) => {
+    setHoveredLetter(letter);
+  };
+
+  const handleLeave = () => {
+    setHoveredLetter(null);
+  };
   return (
     <>
-      <h2 className="head-text">Skills & Experience</h2>
+      <h2 className="head-text">
+        <div className="letters">
+          <span
+            className={hoveredLetter === "s" ? "hovered" : ""}
+            onMouseEnter={() => handleHover("s")}
+            onMouseLeave={handleLeave}
+          >
+            s
+          </span>
+          <span
+            className={hoveredLetter === "k" ? "hovered" : ""}
+            onMouseEnter={() => handleHover("k")}
+            onMouseLeave={handleLeave}
+          >
+            k
+          </span>
+          <span
+            className={hoveredLetter === "i" ? "hovered" : ""}
+            onMouseEnter={() => handleHover("i")}
+            onMouseLeave={handleLeave}
+          >
+            i
+          </span>
+          <span
+            className={hoveredLetter === "l" ? "hovered" : ""}
+            onMouseEnter={() => handleHover("l")}
+            onMouseLeave={handleLeave}
+          >
+            l
+          </span>
+          <span
+            className={hoveredLetter === "l2" ? "hovered" : ""}
+            onMouseEnter={() => handleHover("l2")}
+            onMouseLeave={handleLeave}
+          >
+            l
+          </span>
+          <span
+            className={hoveredLetter === "s2" ? "hovered" : ""}
+            onMouseEnter={() => handleHover("s2")}
+            onMouseLeave={handleLeave}
+          >
+            s
+          </span>
+        </div>
+      </h2>
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
@@ -79,6 +149,19 @@ const Skills = () => {
           ))}
         </motion.div>
         <div className="app__skills-exp">
+          <div
+            style={{
+              fontSize: 25,
+              fontWeight: "bold",
+              textTransform: "uppercase",
+              letterSpacing: "0.05em",
+              textAlign: "center",
+              marginLeft: 80,
+              marginBottom: 20,
+            }}
+          >
+            <b>Experience</b>
+          </div>
           {experiences.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
