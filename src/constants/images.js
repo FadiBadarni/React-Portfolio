@@ -30,7 +30,7 @@ import medical from "../assets/medical.jpg";
 import portfolio from "../assets/portfolio.png";
 import portfolio2 from "../assets/portfolio2.png";
 
-export default {
+const images = {
   email,
   mobile,
   polygon,
@@ -62,3 +62,6 @@ export default {
   portfolio,
   portfolio2,
 };
+
+export default images;
+
