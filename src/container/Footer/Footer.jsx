@@ -10,7 +10,6 @@ const Footer = () => {
   const serviceKey = process.env.REACT_APP_SERVICE_KEY;
   const templateKey = process.env.REACT_APP_TEMPLATE_KEY;
   const publicKey = process.env.REACT_APP_PUBLIC_KEY;
-  console.log(serviceKey);
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",

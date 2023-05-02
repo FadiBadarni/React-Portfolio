@@ -23,6 +23,7 @@ import frontend from "../assets/frontend.jpg";
 import database from "../assets/Database.jpg";
 import backend from "../assets/backend.png";
 
+import warehouse from "../assets/warehouse.png";
 import flight from "../assets/flight.png";
 import keylogger from "../assets/keylogger.png";
 import password from "../assets/password.jpg";
@@ -55,6 +56,7 @@ const images = {
   database,
   backend,
 
+  warehouse,
   flight,
   keylogger,
   password,
@@ -64,4 +66,3 @@ const images = {
 };
 
 export default images;
-
