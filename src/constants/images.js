@@ -1,17 +1,16 @@
 import email from "../assets/email.png";
 import mobile from "../assets/mobile.png";
 
-import cpp from "../assets/cpp.png";
-import css from "../assets/css.png";
-import html from "../assets/html.png";
-import javascript from "../assets/javascript.png";
-import node from "../assets/node.png";
-import python from "../assets/python.png";
-import java from "../assets/java.png";
-import react from "../assets/react.png";
-import sass from "../assets/sass.png";
-import cLanguage from "../assets/C.png";
-import spring from "../assets/spring.png";
+import cpp from "../assets/cpp.svg";
+import css from "../assets/css.svg";
+import html from "../assets/html.svg";
+import javascript from "../assets/javascript.svg";
+import node from "../assets/node.svg";
+import python from "../assets/python.svg";
+import java from "../assets/java.svg";
+import react from "../assets/react.svg";
+import cLanguage from "../assets/C.svg";
+import spring from "../assets/spring.svg";
 
 import desktop from "../assets/Desktop.png";
 import fadi from "../assets/fadi.png";
@@ -43,7 +42,6 @@ const images = {
   python,
   java,
   react,
-  sass,
   cLanguage,
   spring,
 

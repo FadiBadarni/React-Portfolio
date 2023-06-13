@@ -5,6 +5,7 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 
 import "./Skills.scss";
+
 const skills = [
   {
     name: "Advanced",
@@ -58,6 +59,7 @@ const skills = [
     icon: images.spring,
   },
 ];
+
 const experiences = [
   {
     year: 2020 + "-Current",
@@ -69,62 +71,32 @@ const experiences = [
     ],
   },
 ];
+
+const HoverableLetter = ({ letter, hoveredLetter, setHoveredLetter }) => (
+  <span
+    className={hoveredLetter === letter ? "hovered" : ""}
+    onMouseEnter={() => setHoveredLetter(letter)}
+    onMouseLeave={() => setHoveredLetter(null)}
+  >
+    {letter}
+  </span>
+);
+
 const Skills = () => {
   const [hoveredLetter, setHoveredLetter] = useState(null);
 
-  const handleHover = (letter) => {
-    setHoveredLetter(letter);
-  };
-
-  const handleLeave = () => {
-    setHoveredLetter(null);
-  };
   return (
     <>
       <h2 className="head-text">
         <div className="letters">
-          <span
-            className={hoveredLetter === "s" ? "hovered" : ""}
-            onMouseEnter={() => handleHover("s")}
-            onMouseLeave={handleLeave}
-          >
-            s
-          </span>
-          <span
-            className={hoveredLetter === "k" ? "hovered" : ""}
-            onMouseEnter={() => handleHover("k")}
-            onMouseLeave={handleLeave}
-          >
-            k
-          </span>
-          <span
-            className={hoveredLetter === "i" ? "hovered" : ""}
-            onMouseEnter={() => handleHover("i")}
-            onMouseLeave={handleLeave}
-          >
-            i
-          </span>
-          <span
-            className={hoveredLetter === "l" ? "hovered" : ""}
-            onMouseEnter={() => handleHover("l")}
-            onMouseLeave={handleLeave}
-          >
-            l
-          </span>
-          <span
-            className={hoveredLetter === "l2" ? "hovered" : ""}
-            onMouseEnter={() => handleHover("l2")}
-            onMouseLeave={handleLeave}
-          >
-            l
-          </span>
-          <span
-            className={hoveredLetter === "s2" ? "hovered" : ""}
-            onMouseEnter={() => handleHover("s2")}
-            onMouseLeave={handleLeave}
-          >
-            s
-          </span>
+          {["s", "k", "i", "l", "l", "s"].map((letter, index) => (
+            <HoverableLetter
+              key={index}
+              letter={letter}
+              hoveredLetter={hoveredLetter}
+              setHoveredLetter={setHoveredLetter}
+            />
+          ))}
         </div>
       </h2>
 
