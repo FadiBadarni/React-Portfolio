@@ -4,12 +4,26 @@ import emailjs from "@emailjs/browser";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 import { useState } from "react";
+import * as Yup from "yup";
+import { motion } from "framer-motion";
+
 import "./Footer.scss";
+
+const validationSchema = Yup.object({
+  user_name: Yup.string().required("Name is required"),
+  user_email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  message: Yup.string().required("Message is required"),
+});
 
 const Footer = () => {
   const serviceKey = process.env.REACT_APP_SERVICE_KEY;
   const templateKey = process.env.REACT_APP_TEMPLATE_KEY;
   const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+  const form = useRef();
+  const [errors, setErrors] = useState({});
+
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
@@ -25,21 +39,31 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-    setLoading(true);
-    emailjs.sendForm(serviceKey, templateKey, form.current, publicKey).then(
-      (result) => {
-        console.log(result.text);
-        setLoading(false);
-        setIsFormSubmitted(true);
-      },
-      (error) => {
-        console.log(error.text);
-        setLoading(false);
-      }
-    );
+    validationSchema
+      .validate(formData, { abortEarly: false })
+      .then(() => {
+        setLoading(true);
+        emailjs.sendForm(serviceKey, templateKey, form.current, publicKey).then(
+          (result) => {
+            console.log(result.text);
+            setLoading(false);
+            setIsFormSubmitted(true);
+          },
+          (error) => {
+            console.log(error.text);
+            setLoading(false);
+          }
+        );
+      })
+      .catch((err) => {
+        let formErrors = {};
+        err.inner.forEach((error) => {
+          formErrors[error.path] = error.message;
+        });
+        setErrors(formErrors);
+      });
   };
 
   return (
@@ -65,9 +89,9 @@ const Footer = () => {
         <form ref={form} className="app__footer-form app__flex">
           <div className="app__flex">
             <input
-              className="p-text"
+              className={`p-text ${errors.user_name && "input-error"}`}
               type="text"
-              placeholder="Your Name"
+              placeholder={errors.user_name || "Your Name"}
               name="user_name"
               value={user_name}
               onChange={handleChangeInput}
@@ -75,9 +99,9 @@ const Footer = () => {
           </div>
           <div className="app__flex">
             <input
-              className="p-text"
+              className={`p-text ${errors.user_email && "input-error"}`}
               type="email"
-              placeholder="Your Email"
+              placeholder={errors.user_email || "Your Email"}
               name="user_email"
               value={user_email}
               onChange={handleChangeInput}
@@ -85,10 +109,10 @@ const Footer = () => {
           </div>
           <div>
             <textarea
-              className="p-text"
-              placeholder="Your Message"
-              value={message}
+              className={`p-text ${errors.message && "input-error"}`}
+              placeholder={errors.message || "Your Message"}
               name="message"
+              value={message}
               onChange={handleChangeInput}
             />
           </div>
