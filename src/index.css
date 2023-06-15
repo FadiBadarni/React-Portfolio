@@ -8,18 +8,9 @@
     --gray-color: #6c6279;
     --white-color: #ffffff;
     --bg-color: url('./assets/bgIMG.png');
-
     --color-text: #000000;
-    /* Other colors */
 
-    /* Dark mode colors */
-    --dark-primary-color: #111827;
-    --dark-secondary-color: #e5e7eb;
-    --dark-gray-color: #1f2937;
-    --dark-white-color: #d1d5db;
-    --dark-bg-color: #000000;
-    --dark-color-text: #ffffff;
-    /* Other dark mode colors */
+
 }
 
 

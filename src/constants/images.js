@@ -23,10 +23,10 @@ import database from "../assets/Database.jpg";
 import backend from "../assets/backend.png";
 
 import warehouse from "../assets/warehouse.png";
-import flight from "../assets/flight.png";
+import flight from "../assets/flight.jpg";
 import keylogger from "../assets/keylogger.png";
-import password from "../assets/password.jpg";
-import medical from "../assets/medical.jpg";
+import password from "../assets/password.png";
+import medical from "../assets/medical.png";
 import portfolio from "../assets/portfolio.png";
 import portfolio2 from "../assets/portfolio2.png";
 
