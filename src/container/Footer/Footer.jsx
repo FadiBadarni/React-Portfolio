@@ -5,7 +5,6 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import { images } from "../../constants";
 import { useState } from "react";
 import * as Yup from "yup";
-import { motion } from "framer-motion";
 
 import "./Footer.scss";
 
