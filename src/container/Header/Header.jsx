@@ -57,7 +57,7 @@ const Header = () => {
           </motion.div>
           <div className="tag-cmp button-54 app__flex">
             <p className="cv-box  p-text">
-              <a href="https://docdro.id/SXz93RH" download>
+              <a href="https://docdro.id/71FiS4o" download>
                 View CV
               </a>
             </p>
