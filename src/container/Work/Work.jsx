@@ -17,13 +17,14 @@ const projects = [
     featured: true,
   },
   {
-    title: "Keylogger Application",
+    title: "Compiler",
     description:
-      "Python app built for Introduction to Cyber Security course to understand keyloggers and spying malware.",
-    imgUrl: images.keylogger,
-    repository: "https://github.com/FadiBadarni/KeyLogger",
-    tags: ["Python"],
+      "The compiler parses a programming language that resembles a similar syntax to that of the C programming language",
+    imgUrl: images.portfolio2,
+    repository: "https://github.com/FadiBadarni/Compiler",
+    tags: ["C", "Lex", "Yacc"],
   },
+
   {
     title: "Flight Booking System",
     description:
@@ -49,18 +50,19 @@ const projects = [
     tags: ["MySQL", "FXML"],
   },
   {
+    title: "Keylogger Application",
+    description:
+      "Python app built for Introduction to Cyber Security course to understand keyloggers and spying malware.",
+    imgUrl: images.portfolio2,
+    repository: "https://github.com/FadiBadarni/KeyLogger",
+    tags: ["Python"],
+  },
+  {
     title: "React Portfolio Website",
     description: "Personal portfolio website using React.",
     imgUrl: images.portfolio2,
     repository: "https://github.com/FadiBadarni/React-Portfolio",
     tags: ["React", "JSX", "SCSS"],
-  },
-  {
-    title: "Portfolio Website",
-    description: "Portfolio Website.",
-    imgUrl: images.portfolio,
-    repository: "https://github.com/FadiBadarni/PortFolio-2",
-    tags: ["HTML", "JS", "CSS"],
   },
 ];
 
